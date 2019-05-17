@@ -30,7 +30,7 @@ global with sharing class PropertyController {
                   	  AND price__c <= :maxPrice
                       AND beds__c >= :numberBedrooms
                       AND baths__c >= :numberBathrooms];
-          page.properties = [SELECT Id, address__c, city__c, state__c, description__c, price__c, baths__c, beds__c, thumbnail__c FROM property__c 
+          page.properties = [SELECT Id, address__c, city__c, state__c, description__c, price__c, baths__c, beds__c, thumbnail__c, Trending__c FROM property__c 
                       WHERE (title__c LIKE :key OR city__c LIKE :key OR tags__c LIKE :key)
                       AND (title__c LIKE :visualKey OR city__c LIKE :visualKey OR tags__c LIKE :visualKey)
                       AND price__c >= :minPrice
